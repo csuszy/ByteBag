@@ -1,0 +1,20 @@
+﻿ByteBagWPF
+
+
+winexe
+C#
+.cs
+C:\Users\Hulvej Szabolcs\Desktop\ByteBagMAIN\ByteBagWPF\ByteBagWPF\obj\x64\Release\
+ByteBagWPF
+none
+false
+TRACE
+C:\Users\Hulvej Szabolcs\Desktop\ByteBagMAIN\ByteBagWPF\ByteBagWPF\App.xaml
+211502705266
+
+44-682762277
+122-540445799
+Frontend\Views\AdminWindow\AdminsView\AdminsView.xaml;Frontend\Views\AdminWindow\MainAdminView\MainAdmin.xaml;Frontend\Views\AdminWindow\MainPageView\MainPageView.xaml;Frontend\Views\AdminWindow\MarketPostControlView\MarketPostControlView.xaml;Frontend\Views\AdminWindow\ModerationView\ModerationView.xaml;Frontend\Views\AdminWindow\PostControlView\PostControlView.xaml;Frontend\Views\AdminWindow\UserControlView\UserControlView.xaml;Frontend\Views\LoginWindow\LoginWindow.xaml;Frontend\Views\MessageWindow\Delete\AdminDelete\AdminDeleteWindow.xaml;Frontend\Views\MessageWindow\Delete\MarketPostDelete\MarketDelete.xaml;Frontend\Views\MessageWindow\Delete\PostDelete\PostDelete.xaml;Frontend\Views\MessageWindow\Delete\UserDelete\UserDeleteMessageWindow.xaml;Frontend\Views\MessageWindow\Edit\AdminEdit\AdminEditWindow.xaml;Frontend\Views\MessageWindow\Edit\EndPointURL\EditEndpointWindow.xaml;Frontend\Views\MessageWindow\Edit\PostEdit\ForumPost\ForumPostEdit.xaml;Frontend\Views\MessageWindow\Edit\PostEdit\MarketPost\MarketPostEdit.xaml;Frontend\Views\MessageWindow\Edit\UserEdit\UserEditWindow.xaml;Frontend\Views\MessageWindow\Error\ErrorMessageWindow.xaml;Frontend\Views\MessageWindow\Ok\OkayMessageWindow.xaml;Frontend\Views\MessageWindow\Progress\ProgressWindow.xaml;Frontend\Views\MessageWindow\Update\UpdateAvaiable.xaml;
+
+False
+

@@ -1,0 +1,340 @@
+﻿<Window x:Class="ByteBagWPF.Views.AdminWindow.MainAdminView.MainAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ByteBagWPF.Views.AdminWindow.MainAdminView"
+        mc:Ignorable="d"
+        
+        Title="ByteBag Admin" Height="600" 
+        Width="1000"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown"
+        FontFamily="Montserrat"
+        >
+    
+    <Border CornerRadius="12">
+        <Border.Background>
+            <ImageBrush ImageSource="../../../Images/back-image.jpg"
+                 Stretch="None"/>
+        </Border.Background>
+
+        <Border CornerRadius="10"                    
+                BorderThickness="2"
+                Opacity="0.95">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#3A0061" Offset="0"/>
+                    <GradientStop Color="#000823" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="36*"/>
+                    <ColumnDefinition Width="163*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="ByteBag Admin Panel"
+                        Foreground="DarkGray"
+                        FontSize="12"
+                            FontWeight="Bold"
+                        FontFamily="Montserrat"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        Margin="10,0,0,0"/>
+
+                    <Button x:Name="btnMinimize"                           
+                     BorderThickness="0"
+                     Content="-"
+                     Foreground="White"
+                     FontWeight="Bold"
+                     FontSize="16"
+                     FontFamily="Montserrat"
+                     Cursor="Hand"
+                     Grid.Column="1"
+                     Click="btnMinimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#3A0061"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                 CornerRadius="9"
+                                 Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+                     BorderThickness="0"
+                     Content="X"
+                         FontWeight="Bold"
+                     Foreground="Black"
+                     FontSize="12"
+                     FontFamily="Montserrat"
+                     Cursor="Hand"
+                     Grid.Column="2"
+                     Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                 CornerRadius="9"
+                                 Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <StackPanel Margin="25,10,35,428" Grid.Row="1">
+                    <Image x:Name="logoIMG" MouseLeftButtonDown="Image_MouseUp" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" Source="../../../Images/LogoR.png"
+                        Width="120" Height="120" />
+                </StackPanel>
+
+                <StackPanel Margin="58,457,57,49" Grid.Row="1">
+                    <Image x:Name="logOUT" 
+                           MouseLeftButtonDown="MainAdmin_Closed" 
+                           MouseEnter="logOUT_MouseEnter" MouseLeave="logOUT_MouseLeave"
+                           Source="../../../Images/logout.png"
+                           Width="25" Height="25"
+                           Margin="0,13,0,0"
+                        />
+
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="ViewSwitchSP" Grid.Row="1" Height="246" Width="160" Margin="0,158,0,0">
+                    <Button x:Name="homeBT" Width="110" Margin="0,0,0,10" FontWeight="Bold" BorderThickness="0" 
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    Foreground="White" FontSize="14" FontFamily="Montserrat"
+                    Cursor="Hand" Content="Főoldal" Click="View_Switch">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#000823"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#462AD8"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="110" Height="40"
+                                    CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="userBT" Width="110" Margin="0,0,0,10" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="11" FontFamily="Montserrat"
+                            Cursor="Hand" Content="Felhasználók" Click="View_Switch">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#3A0061"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="110" Height="30"
+                                CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                 HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="postBT" Width="110" Margin="0,0,0,10" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="11" FontFamily="Montserrat"
+                    Cursor="Hand" Content="Posztok" Click="View_Switch">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#3A0061"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="110" Height="30" CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="MarketpostBT" Width="110" Margin="0,0,0,10" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="11" FontFamily="Montserrat"
+                    Cursor="Hand" Content="Market Posztok" Click="View_Switch">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#3A0061"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="110" Height="30" CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="adminListBT" Width="110" Margin="0,0,0,10" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="11" FontFamily="Montserrat"
+                            Cursor="Hand" Content="Admin Lista" Click="View_Switch">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#3A0061"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="110" Height="30"
+                                    CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="moderationBT" Width="110" Margin="0,0,0,10" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="11" FontFamily="Montserrat"
+                            Cursor="Hand" Content="Moderáció" Click="View_Switch">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#3A0061"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="110" Height="30" CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                </StackPanel>
+
+                <ContentControl x:Name="MainViewControl" Margin="180,5,10,10" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid>
+                        <Label x:Name="defaultPageLBh1" Foreground="White" FontSize="30" FontFamily="Montserrat" Margin="0,79,0,426" FontWeight="Bold"
+                               HorizontalContentAlignment="Center" HorizontalAlignment="Center"
+                               >
+                            Üdvözöllek a BYTEBAG Adminisztrációs felületén!
+                        </Label>
+
+
+                        <Label x:Name="defaultPageLBp1" Content="Ezen a felhasználói felületen kezelheted a felhasználókat, posztokat," 
+                             HorizontalContentAlignment="Center" Foreground="White" FontSize="20" FontFamily="Montserrat" Margin="56,187,37,329" Height="35"/>
+                        <Label x:Name="defaultPageLBp2" Content=" kezelheted a bejövő panaszokat." 
+                            HorizontalContentAlignment="Center" Foreground="White" FontSize="20" FontFamily="Montserrat" Margin="163,211,162,304"/>
+                        <Label x:Name="defaultPageLBp3" Content="Láthatod a felhasználók listáját, melyeknek nevet, e-mail címet " 
+                            HorizontalContentAlignment="Center" Foreground="White" FontSize="20" FontFamily="Montserrat" Margin="31,314,37,199"/>
+                        <Label x:Name="defaultPageLBp4" Content="vagy akár jelszavat is módosíthatsz." 
+                            HorizontalContentAlignment="Center" Foreground="White" FontSize="20" FontFamily="Montserrat" Margin="56,338,62,173"/>
+                        <Label x:Name="defaultPageLBp5" Content=" Továbbá láthatod a további moderációt és adminisztrációt végző" 
+                            HorizontalContentAlignment="Center" Foreground="White" FontSize="20" FontFamily="Montserrat" Margin="20,408,20,70"/>
+                        <Label x:Name="defaultPageLBp6" Content="kollegáid listáját is!" 
+    HorizontalContentAlignment="Center" Foreground="White" FontSize="20" FontFamily="Montserrat" Margin="20,444,20,70"/>
+                        <Label x:Name="defaultPageLBp7" Content="Jó munkát!" FontWeight="Bold"
+                            HorizontalContentAlignment="Center" Foreground="White" FontSize="16" FontFamily="Montserrat" Margin="244,498,244,26"/>
+
+                    </Grid>
+                </ContentControl>
+
+
+                <Label x:Name="credit" Content="© ByteBag Hungary 2023-2024" FontWeight="Bold"
+    HorizontalContentAlignment="Right" Foreground="LightGray" FontSize="8" FontFamily="Montserrat" Margin="661,544,10,0" Grid.Column="1" Grid.Row="1"/>
+                <Label x:Name="appVersion" Content="App Version: " FontWeight="Bold"
+                    HorizontalContentAlignment="Left" Foreground="LightGray" FontSize="8" FontFamily="Montserrat" Margin="10,544,25,0" Grid.Row="1"/>
+            </Grid>
+
+        </Border>
+
+    </Border>
+
+</Window>

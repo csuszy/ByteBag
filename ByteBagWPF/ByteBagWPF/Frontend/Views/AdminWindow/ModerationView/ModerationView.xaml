@@ -1,0 +1,181 @@
+﻿<UserControl x:Class="ByteBagWPF.Frontend.Views.AdminWindow.ModerationView.ModerationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ByteBagWPF.Frontend.Views.AdminWindow.ModerationView"
+             mc:Ignorable="d" 
+                                        d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" CornerRadius="10"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ScrollBarThumbVertical" TargetType="{x:Type Thumb}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border x:Name="rectangle" Background="#462AD8" Height="{TemplateBinding Height}" SnapsToDevicePixels="True" Width="7px" CornerRadius="8"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="rectangle" Value="#8A16C1"/>
+                            </Trigger>
+                            <Trigger Property="IsDragging" Value="true">
+                                <Setter Property="Background" TargetName="rectangle" Value="#8A16C1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel x:Name="PostInfo" Grid.Column="1" Margin="34,10,99,35" Grid.Row="1">
+            <Grid x:Name="PostInfoGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="494*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListBox ScrollViewer.CanContentScroll="False" HorizontalContentAlignment="Center" Height="457" FontSize="18" x:Name="moderationListLB" Margin="0,0,-67,-88" Grid.ColumnSpan="2" Foreground="White" Background="Transparent" SelectionChanged="moderationListLB_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock x:Name="listboxTB" TextAlignment="Center" Padding="20" Text="{Binding}" TextWrapping="Wrap" Width="620">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="FontWeight" Value="Normal"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=admin.userName}" Value="Bold">
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.Resources>
+                        <Style TargetType="{x:Type ScrollBar}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                        <Grid x:Name="Bg" SnapsToDevicePixels="true">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                                                <RowDefinition Height="0.00001*"/>
+                                                <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                                            </Grid.RowDefinitions>
+                                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Row="1" CornerRadius="10"/>
+                                            <Track x:Name="PART_Track" IsDirectionReversed="true" IsEnabled="{TemplateBinding IsMouseOver}" Grid.Row="1">
+                                                <Track.DecreaseRepeatButton>
+                                                    <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource RepeatButtonTransparent}" HorizontalAlignment="Left" Width="17"/>
+                                                </Track.DecreaseRepeatButton>
+                                                <Track.IncreaseRepeatButton>
+                                                    <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource RepeatButtonTransparent}"/>
+                                                </Track.IncreaseRepeatButton>
+                                                <Track.Thumb>
+                                                    <Thumb Style="{StaticResource ScrollBarThumbVertical}" Margin="1"/>
+                                                </Track.Thumb>
+                                            </Track>
+                                        </Grid>
+
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.Resources>
+                </ListBox>
+
+                <Button x:Name="RefreshBT" Margin="371,481,-24,-139" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="12" FontFamily="Montserrat"
+        Cursor="Hand" Content="Lista frissítés" Grid.ColumnSpan="2">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#000823"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="30"
+CornerRadius="20"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="criticismDeleteBT" IsEnabled="False" Margin="203,481,113,-139" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="12" FontFamily="Montserrat"
+        Cursor="Hand" Content="Törlés">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Red"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#000823"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="30"
+CornerRadius="20"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="criticismBT" IsEnabled="False" Margin="34,481,281,-139" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="12" FontFamily="Montserrat"
+        Cursor="Hand" Content="Bírálás">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#000823"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#8A16C1"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="30"
+CornerRadius="20"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

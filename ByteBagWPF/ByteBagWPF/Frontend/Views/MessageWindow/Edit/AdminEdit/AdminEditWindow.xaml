@@ -1,0 +1,355 @@
+﻿<Window x:Class="ByteBagWPF.Frontend.Views.MessageWindow.Edit.AdminEdit.AdminEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ByteBagWPF.Frontend.Views.MessageWindow.Edit.AdminEdit"
+        mc:Ignorable="d"
+                                     Height="400" 
+     Width="800"
+     WindowStyle="None"
+     ResizeMode="NoResize"
+     WindowStartupLocation="CenterScreen"
+     Background="Transparent"
+     AllowsTransparency="True"
+     MouseDown="Window_MouseDown"
+     FontFamily="Montserrat"
+        Topmost="True"
+     >
+    <Border CornerRadius="12">
+
+
+        <Border CornerRadius="10"                    
+     BorderThickness="2"
+     Opacity="0.95">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#3A0061" Offset="0"/>
+                    <GradientStop Color="#000823" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="36*"/>
+                    <ColumnDefinition Width="163*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="ByteBag Admin Edit Panel"
+                        Foreground="DarkGray"
+                        FontSize="12"
+                            FontWeight="Bold"
+                        FontFamily="Montserrat"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        Margin="10,0,0,0"/>
+
+                    <Button x:Name="btnMinimize"                           
+                     BorderThickness="0"
+                     Content="-"
+                     Foreground="White"
+                     FontWeight="Bold"
+                     FontSize="16"
+                     FontFamily="Montserrat"
+                     Cursor="Hand"
+                     Grid.Column="1"
+                     Click="btnMinimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#3A0061"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                 CornerRadius="9"
+                                 Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+                     BorderThickness="0"
+                     Content="X"
+                         FontWeight="Bold"
+                     Foreground="Black"
+                     FontSize="12"
+                     FontFamily="Montserrat"
+                     Cursor="Hand"
+                     Grid.Column="2"
+                     Click="btnClose_Click" HorizontalAlignment="Left" Width="25">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                 CornerRadius="9"
+                                 Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <StackPanel Margin="37,120,637,129" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="../../../../Images/LogoR.png"
+Width="120" Height="120"
+                        MouseUp="Image_MouseUp"/>
+
+                </StackPanel>
+
+                <Grid Grid.Column="1" Margin="72,10,41,89" Grid.Row="1">
+                    <TextBlock Text="Adminisztrátor név"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat" Margin="72,77,350,175" RenderTransformOrigin="0.5,0.5"                             
+                                >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="0.163"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0.197"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBox x:Name="AdminNameTB"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"                            
+                        Foreground="White"
+                        CaretBrush="White"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,2"
+                        Height="28"
+                        VerticalContentAlignment="Center"
+                        Padding="20,0,0,0" Margin="10,108,0,131"
+                        IsEnabled="True"
+                        Width="228"
+                        HorizontalAlignment="Left"
+                                 >
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Frontend/Images/user-icon.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBlock Text="E-mail cím"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat" Margin="375,76,98,178" RenderTransformOrigin="0.5,0.5"                             
+                                >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="0.163"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0.197"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBox x:Name="adminEMAIL"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"                            
+                        Foreground="White"
+                        CaretBrush="White"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,2"
+                        Height="28"
+                        VerticalContentAlignment="Center"
+                        Padding="20,0,0,0" Margin="291,108,0,131"
+                        Width="228"
+                        HorizontalAlignment="Left"
+                             IsEnabled="False"
+                                 >
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Frontend/Images/user-mail.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBlock Text="Jelenlegi jelszó"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Bold"
+                        FontFamily="Montserrat"                             
+                        Margin="82,166,361,83"/>
+
+                    <PasswordBox x:Name="AdminoldpasswordPB"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"                            
+                        Foreground="White"
+                        CaretBrush="White"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,2"
+                        Height="28"
+                        VerticalContentAlignment="Center"
+                        Margin="10,208,0,31"
+                        Padding="20,0,0,0"
+                        IsEnabled="False"
+                        Width="228"
+                        HorizontalAlignment="Left"
+                                     >
+
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="/Frontend/Images/key-icon.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+
+                    <TextBlock Text="Új jelszó"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Bold"
+                        FontFamily="Montserrat"                             
+                        Margin="381,168,105,85"/>
+
+                    <PasswordBox x:Name="AdminpasswordChangePB"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"                            
+                        Foreground="White"
+                        CaretBrush="White"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,2"
+                        Height="28"
+                        VerticalContentAlignment="Center"
+                        Margin="291,208,0,31"
+                        Padding="20,0,0,0"
+                        IsEnabled="True"
+                        Width="228"
+                        HorizontalAlignment="Left"
+                                     >
+
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="/Frontend/Images/key-icon.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+                </Grid>
+
+                <Grid>
+                    <Button x:Name="AdminEditokBT" FontSize="14" FontWeight="Bold" Foreground="White" FontFamily="Montserrat" Content="Tovább" Margin="468,338,-520,-338" Click="okBT_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="Green"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="150" Height="30"
+                                    CornerRadius="20"
+                                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="AdminEditUndoBT" FontSize="14" FontWeight="Bold" Foreground="White" FontFamily="Montserrat" Content="Mégse" Margin="254,338,-305,-338" Click="undoBT_Click" RenderTransformOrigin="0.682,0.517">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="Red"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="150" Height="30"
+CornerRadius="20"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <TextBlock Text="Admin Jogosultság"
+                    Foreground="White"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat" Margin="283,28,264,323" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Grid.Column="1"                             
+                                >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="0.163"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.197"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <ComboBox x:Name="adminPassCB" Grid.Column="1" HorizontalAlignment="Left" Margin="318,50,0,0" Grid.Row="1" VerticalAlignment="Top" Width="38" FontWeight="Bold"/>
+
+            </Grid>
+
+        </Border>
+
+    </Border>
+
+
+</Window>

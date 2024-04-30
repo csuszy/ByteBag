@@ -1,0 +1,302 @@
+﻿<Window x:Class="ByteBagWPF.Frontend.Views.MessageWindow.Edit.PostEdit.ForumPost.ForumPostEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ByteBagWPF.Frontend.Views.MessageWindow.Edit.PostEdit.ForumPost"
+        mc:Ignorable="d"
+        Height="600" 
+     Width="800"
+     WindowStyle="None"
+     ResizeMode="NoResize"
+     WindowStartupLocation="CenterScreen"
+     Background="Transparent"
+     AllowsTransparency="True"
+     MouseDown="Window_MouseDown"
+     FontFamily="Montserrat"
+        Title="ByteBag Forum Edit"
+        Topmost="True"
+     >
+    <Border CornerRadius="12">
+
+
+        <Border CornerRadius="10"                    
+     BorderThickness="2"
+     Opacity="0.95">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#3A0061" Offset="0"/>
+                    <GradientStop Color="#000823" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="36*"/>
+                    <ColumnDefinition Width="163*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="ByteBag Forum Post Edit Panel"
+                        Foreground="DarkGray"
+                        FontSize="12"
+                            FontWeight="Bold"
+                        FontFamily="Montserrat"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        Margin="10,0,0,0"/>
+
+                    <Button x:Name="btnMinimize"                           
+                     BorderThickness="0"
+                     Content="-"
+                     Foreground="White"
+                     FontWeight="Bold"
+                     FontSize="16"
+                     FontFamily="Montserrat"
+                     Cursor="Hand"
+                     Grid.Column="1"
+                     Click="btnMinimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#3A0061"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                 CornerRadius="9"
+                                 Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+                     BorderThickness="0"
+                     Content="X"
+                         FontWeight="Bold"
+                     Foreground="Black"
+                     FontSize="12"
+                     FontFamily="Montserrat"
+                     Cursor="Hand"
+                     Grid.Column="2"
+                     Click="btnClose_Click" HorizontalAlignment="Left" Width="25">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                 CornerRadius="9"
+                                 Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <StackPanel Margin="12,10,72,492" Grid.Row="1">
+                    <Image Source="../../../../../Images/LogoR.png"
+Width="74" Height="63"
+                        MouseUp="Image_MouseUp"/>
+
+                </StackPanel>
+
+                <Grid Margin="116,0,116,72" Grid.Row="1" Grid.ColumnSpan="2">
+                    <TextBlock Text="Posztoló neve"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat" Margin="242,33,0,417" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left"                            
+                                >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="0.163"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0.197"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBox x:Name="UserNameTB"
+                        HorizontalContentAlignment="Center"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"                            
+                        Foreground="White"
+                        CaretBrush="White"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,2"
+                        Height="28"
+                        VerticalContentAlignment="Center"
+                        Padding="0,0,0,0" Margin="0,60,0,406"
+                        IsEnabled="False"
+                        Width="216"
+                        HorizontalAlignment="Center">
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Frontend/Images/user-icon.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBlock Text="Cím"
+                               HorizontalAlignment="Center"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat" Margin="0,111,0,367" RenderTransformOrigin="0.5,0.5" Width="24"                             
+                                >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="0.414"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0.197"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBox x:Name="PostHeaderTB"
+    FontSize="13"
+    FontWeight="Medium"
+    FontFamily="Montserrat"                            
+    Foreground="White"
+    CaretBrush="White"
+    BorderBrush="White"
+    BorderThickness="0,0,0,2"
+    Height="28"
+    VerticalContentAlignment="Center"
+    Padding="20,0,0,0" Margin="0,136,0,330"
+    IsEnabled="True"
+    Width="544"
+    HorizontalAlignment="Center"
+                 >
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Frontend/Images/edit.png"
+                                        Stretch="None"
+                                        AlignmentY="Center"
+                                        AlignmentX="Left">
+                            </ImageBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="Poszt szövege"
+                               HorizontalAlignment="Center"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Bold"
+                        FontFamily="Montserrat"                             
+                        Margin="0,184,0,294" Width="80"/>
+
+                    <TextBox AcceptsReturn="True"  FontSize="14" Padding="8" x:Name="editedPostParagraph" Background="Transparent" BorderBrush="White" Foreground="White" HorizontalAlignment="Center" Margin="0,205,0,0" TextWrapping="Wrap" Text="Post szövege..." VerticalAlignment="Top" Width="544" Height="279" PreviewKeyDown="editedPostParagraph_PreviewKeyDown">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                        <Setter Property="CaretBrush" Value="White"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+
+                </Grid>
+
+                <Grid>
+                    <Button x:Name="postEditokBT" FontSize="14" FontWeight="Bold" Foreground="White" FontFamily="Montserrat" Content="Tovább" Margin="396,547,-448,-547" Click="postEditokBT_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="Green"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="150" Height="30"
+                                    CornerRadius="20"
+                                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="postEditUndoBT" FontSize="14" FontWeight="Bold" Foreground="White" FontFamily="Montserrat" Content="Mégse" Margin="201,547,-252,-547" Click="postEditUndoBT_Click" RenderTransformOrigin="0.682,0.517">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="Red"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#000823"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="150" Height="30"
+CornerRadius="20"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+
+            </Grid>
+
+        </Border>
+
+    </Border>
+
+</Window>

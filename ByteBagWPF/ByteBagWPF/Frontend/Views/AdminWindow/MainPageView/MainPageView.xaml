@@ -1,0 +1,182 @@
+﻿<UserControl x:Class="ByteBagWPF.Frontend.Views.AdminWindow.MainPageView.MainPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ByteBagWPF.Frontend.Views.AdminWindow.MainPageView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel x:Name="MainPageViews" Margin="0,10,0,2">
+            <Grid x:Name="PageView">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="494*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Width="80px" Foreground="Transparent" Height="80px" Margin="0 20 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="adminAvatarTXB">
+                    <Image x:Name="userAvatar" Width="60" Height="60"></Image>
+                </TextBlock>
+                <TextBlock 
+                    Text="Felhasználónév"
+                    Foreground="White"
+                    FontSize="13"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat" Margin="189,149,467,495" RenderTransformOrigin="0.5,0.5">
+
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="0.16"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.197"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBox x:Name="usernameTB"
+      FontSize="13"
+      FontWeight="Medium"
+      FontFamily="Montserrat"                            
+      Foreground="White"
+      CaretBrush="White"
+      BorderBrush="White"
+      BorderThickness="0,0,0,2"
+      VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Left"
+      Padding="20,0,0,2" Margin="117,188,0,465"
+                                 IsEnabled="True"
+                                 Width="249"
+HorizontalAlignment="Left"
+                                 >
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="../../../Images/user-icon.png"
+                 Stretch="None"
+                 AlignmentX="Left"
+                                    />
+                    </TextBox.Background>
+                </TextBox>
+                <TextBlock Text="E-mail cím"
+                                Foreground="White"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat" Margin="495,149,197,498" RenderTransformOrigin="0.5,0.5"                             
+                                >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="0.16"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.197"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBox x:Name="usernameEMAIL"
+                    FontSize="13"
+                    IsEnabled="False"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"                            
+                    Foreground="White"
+                    CaretBrush="White"
+                    BorderBrush="White"
+                    BorderThickness="0,0,0,2"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Left"
+                    Padding="20,0,0,2"
+                    Margin="402,188,0,465"
+                    Width="247"
+                    HorizontalAlignment="Left">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="../../../Images/user-mail.png"
+                         Stretch="None" AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBlock Text="Jelenlegi jelszó"
+                    Foreground="White"
+                    FontSize="13"
+                    FontWeight="Bold"
+                    FontFamily="Montserrat"                             
+                     Margin="189,270,467,380"/>
+
+                <PasswordBox x:Name="oldpasswordPB"
+                                FontSize="13"
+                                 FontWeight="Medium"
+                                FontFamily="Montserrat"                            
+                                Foreground="White"
+                                CaretBrush="White"
+                                BorderBrush="White"
+                                BorderThickness="0,0,0,2"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="left"
+                                Margin="117,310,0,344"
+                                Padding="20,0,0,2"
+                                IsEnabled="False"
+                                Width="249"
+                                HorizontalAlignment="Left">
+                    <PasswordBox.Background>
+                        <ImageBrush ImageSource="../../../Images/key-icon.png"
+                 Stretch="None"
+                 AlignmentX="Left"/>
+                    </PasswordBox.Background>
+                </PasswordBox>
+
+                <TextBlock Text="Új jelszó"
+                            Foreground="White"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            FontFamily="Montserrat"                             
+                            Margin="500,270,207,382"/>
+
+                <PasswordBox x:Name="passwordChangePB"
+                                FontSize="13"
+                                FontWeight="Medium"
+                                FontFamily="Montserrat"                            
+                                Foreground="White"
+                                CaretBrush="White"
+                                BorderBrush="White"
+                                BorderThickness="0,0,0,2"
+                                VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Left"
+                                Margin="402,310,0,344"
+                                Padding="20,0,0,2"
+                                IsEnabled="True"
+                                Width="247"
+                                HorizontalAlignment="Left"
+                                     >
+
+                    <PasswordBox.Background>
+                        <ImageBrush ImageSource="../../../Images/key-icon.png"
+                                    Stretch="None"
+                                    AlignmentX="Left"/>
+                    </PasswordBox.Background>
+                </PasswordBox>
+
+                <Button x:Name="updateBT" Margin="298,388,298,242" FontWeight="Bold" BorderThickness="0" Foreground="White" FontSize="12" FontFamily="Montserrat"
+        Cursor="Hand" Content="Frissítés" Click="updateBT_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#8A16C1"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="30"
+CornerRadius="20"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
