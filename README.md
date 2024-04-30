@@ -43,3 +43,4 @@ Admin jogosultség esetén a WPF alkamazás is igénybe vehető amit az oldalon 
 
 ## Külső library-k
 [Network Helper](https://github.com/vellt/Network_Helper_Library)
+
