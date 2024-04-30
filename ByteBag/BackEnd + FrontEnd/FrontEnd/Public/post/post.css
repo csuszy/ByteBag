@@ -1,0 +1,827 @@
+* {
+    transition: .1s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+html {
+    min-height: 100dvh;
+    font-family: 'Montserrat';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#3A0061, #000823);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding-bottom: 40px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.nav {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 100%;
+    color: aliceblue;
+    min-height: 60px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 5px;
+    top: -3px;
+    align-items: center;
+}
+
+.logoimg {
+    max-height: 90px;
+}
+
+.search {
+    position: absolute;
+    left: auto;
+    right: auto;
+}
+
+.search>form {
+    display: flex;
+}
+
+.searchiput {
+    max-width: 220px;
+    height: 30px;
+    width: 100%;
+    border-radius: 50px 0px 0px 50px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 8px;
+}
+
+.searchBTN {
+    background-color: white;
+    border: none;
+    margin: 0px;
+    height: 30px;
+    width: 35px;
+    border-radius: 0 50px 50px 0;
+    text-align: center;
+}
+
+.searchBTN:hover {
+    box-shadow: 1px 1px 3px rgb(43, 43, 43);
+}
+
+.searchBTN:active {
+    box-shadow: inset 1px 1px 3px rgb(43, 43, 43);
+}
+
+.navBTN {
+    text-decoration: nones;
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 50px;
+    gap: 0px;
+    top: 20px;
+    align-items: center;
+}
+
+.navBTN button {
+    color: white;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+}
+
+.navBTN .mneuNAVBTN {
+    gap: 0px;
+    width: 100px;
+    right: 100px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+}
+
+.navBTN button:hover {
+    text-shadow: 0px 0px 30px white;
+    transform: scale(1.04);
+}
+
+.navBTN button:active {
+    text-shadow: 0px 0px 30px white;
+    transform: scale(1.04);
+}
+
+#navCim {
+    color: white;
+}
+
+@media only screen and (max-width: 960px) {
+    .navBTN {
+        right: 10px;
+    }
+
+    .search {
+        position: absolute;
+        left: auto;
+        right: auto;
+    }
+
+    .logoimg {
+        max-height: 90px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .nav {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(2, 50px);
+        padding-bottom: 10px;
+        gap: 10px;
+        place-items: center;
+    }
+
+    .logo {
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        grid-column: 1;
+    }
+
+    .search {
+        margin-top: 15px;
+        display: flex;
+        position: relative;
+        grid-column: 2;
+    }
+
+    .searchBTN {
+        display: block;
+        position: relative;
+    }
+
+    .navBTN {
+        display: flex;
+        position: relative;
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        margin-bottom: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 490px) {
+    .nav {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 50px);
+        padding-bottom: 10px;
+        gap: 10px;
+        place-items: center;
+    }
+
+    .logo {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 2px;
+        margin-left: -15px;
+    }
+
+    .search {
+        margin-top: 15px;
+        display: flex;
+        position: relative;
+        width: 100%;
+        grid-column: 1;
+        grid-row: 2;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .searchBTN {
+        display: block;
+        position: relative;
+    }
+
+    .navBTN {
+        width: 100%;
+        display: flex;
+        position: relative;
+        padding: 0;
+        gap: 0;
+        grid-column: 1;
+        grid-row: 3;
+
+        align-content: center;
+        justify-content: center;
+    }
+
+    .mneuNAVBTN {
+        max-width: 80px;
+    }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1800px;
+}
+
+.title {
+    text-align: center;
+}
+
+.cimtitle {
+    text-align: center;
+    margin-top: 60px;
+
+    white-space: pre-wrap;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.main-title {
+    position: static;
+}
+
+.main-title>button {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+
+    z-index: 999;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    text-shadow: 0px 0px 10px black;
+    background: linear-gradient(-20deg, #c300ff, #d161f3);
+}
+
+.main-title>button:hover {
+    box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.3);
+}
+
+.main-title>button:active {
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255, 0.5);
+}
+
+hr {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+.mainlink {
+    text-decoration: underline;
+    color: white;
+}
+
+
+
+.poszt {
+    width: 100%;
+    white-space: pre-wrap;
+    text-align: justify;
+    text-wrap: wrap;
+    line-height: 1.1rem;
+
+}
+
+.modifyBTN {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.modifyBTN button {
+    color: white;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+}
+
+.modifyBTN button:nth-child(1) {
+    background-color: transparent;
+}
+
+.modifyBTN button:nth-child(2) {
+    background-color: transparent
+}
+
+.modifyBTN button:nth-child(1):hover {
+    text-shadow: 0px 0px 30px red;
+    transform: scale(1.04);
+}
+
+.modifyBTN button:nth-child(1):active {
+    text-shadow: 0px 0px 30px red;
+}
+
+.modifyBTN button:nth-child(2):hover {
+    text-shadow: 0px 0px 30px aqua;
+    transform: scale(1.04);
+}
+
+.modifyBTN button:nth-child(2):active {
+    text-shadow: 0px 0px 30px aqua;
+}
+
+/*mymodal*/
+/* A modal alapstílusa */
+.modal {
+    color: black;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* A modal tartalmának stílusa */
+.modal-content {
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    min-width: 250px;
+    max-width: 600px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 0px 0px 10px 0px white;
+    box-shadow: 0px 0px 10px 0px white;
+    background: linear-gradient(#3A0061, #000823);
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+/* Form csoportok */
+.form-group {
+    margin-bottom: 15px;
+    color: white;
+    margin: 5px;
+}
+
+/* Címkék */
+.form-group label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input mezők */
+.form-group input {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.form-group input:disabled {
+    color: grey;
+}
+
+/* Gombok */
+.button-group {
+    margin-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#editpost {
+    resize: vertical;
+    width: 100%;
+    max-height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    min-height: 100px;
+    color: #FFF;
+    background-color: #3A0061;
+}
+
+#okButton {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-left: 20px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: #04AA6D;
+    border: 2px solid #04AA6D;
+    padding: 10px 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#okButton:hover {
+    color: white;
+    background-color: #04AA6D;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+.button-group button {
+    margin-left: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.button-group button:hover {
+    color: white;
+    background-color: #04AA6D;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+#cancelButton {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    border-radius: 15px;
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding: 10px 50px;
+}
+
+#cancelButton:hover {
+    background-color: red;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+.post {
+    width: calc(100% - 11px);
+    display: block;
+    white-space: pre-wrap;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    word-wrap: normal;
+    word-break: break-all;
+    text-indent: -100px;
+}
+
+
+
+
+
+/*profilmodal*/
+/* A modal alapstílusa */
+.profil {
+    color: black;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* A modal tartalmának stílusa */
+.profil-content {
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    min-width: 250px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 0px 0px 10px 0px white;
+    box-shadow: 0px 0px 10px 0px white;
+    width: 30%;
+    background: linear-gradient(#3A0061, #000823);
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+/* Form csoportok */
+.profil-group {
+    margin-bottom: 15px;
+    color: white;
+    margin: 5px;
+}
+
+/* Címkék */
+.profil-group label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+/* Input mezők */
+.profil-group input {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.profil-group input:disabled {
+    color: grey;
+}
+
+
+
+/* Gombok */
+.profilbutton-group {
+    padding-bottom: 20px;
+    padding-top: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.button-group button {
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.profilbutton-group button {
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-left: 5px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: #04AA6D;
+    border: 2px solid #04AA6D;
+    padding: 10px 50px;
+}
+
+.profilbutton-group button:hover {
+    color: white;
+    background-color: #04AA6D;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+#profilcancelButton {
+    font-weight: bold;
+    font-family: 'Montserrat';
+    border-radius: 15px;
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#profilcancelButton:hover {
+    background-color: red;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+.tagolas {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 1150px) {
+    .tagolas {
+        grid-template-columns: 95%;
+        place-items: center;
+    }
+
+    .commentbtn {
+        margin-left: 180px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .commentbtn {
+        margin-left: 50px;
+    }
+}
+
+.commentsection {
+    display: grid;
+    max-width: 600px;
+    width: calc(100% - 11px);
+    min-height: 100px;
+    background-color: rgba(255, 255, 255, 0.05);
+    -webkit-box-shadow: inset 0px 0px 10px 0px white;
+    box-shadow: 0px 0px 10px 0px white;
+    padding: 5px;
+    border-radius: 8px;
+    overflow: auto;
+    flex-direction: column;
+}
+
+.newcomment {
+    resize: none;
+    display: block;
+    width: calc(100% - 11px);
+    height: 50px;
+    border-radius: 7px;
+    padding: 5px;
+    margin-right: 7px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
+    background-color: #7028b8;
+    border: none;
+    color: white;
+    float: left;
+}
+
+textarea:focus {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.newcomment::placeholder {
+    color: rgb(202, 178, 178);
+    text-align: center;
+    padding-top: 15px;
+}
+
+.commentbtn {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    margin-top: 3px;
+    border: none;
+    border-radius: 7px;
+    width: fit-content;
+    height: fit-content;
+    background: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+}
+
+.commentbtn::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 3px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.commentbtn:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+.usercomment {
+    max-width: 100%;
+    /* Hozzáadtuk a maximális szélesség tulajdonságot */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: fit-content;
+    -webkit-box-shadow: inset 0px 0px 8px 0px white;
+    box-shadow: 0px 0px 8px 0px white;
+    /*box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);*/
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 6px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    white-space: wrap;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.usercomment .user {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: #aee269;
+}
+
+.comment {
+    padding: 5px;
+    display: block;
+    width: calc(100% - 11px);
+    white-space: wrap;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+.commentLink{
+    display: flex;
+    color: #e100ff;
+    text-decoration: underline;
+    margin-top: 15px;
+}
+
+
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}

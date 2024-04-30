@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>ByteBag - <%= post.title %>
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="/post.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/543ba7d761.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="/logo" type="image/x-icon">
+</head>
+
+<body>
+  <div id="profilModal" class="profil">
+    <div class="profil-content">
+      <h1 id="profilid">Profil</h1>
+      <form id="profilForm">
+        <div class="profil-group">
+          <label for="username">Profilkép:</label>
+          <input type="text" name="username" disabled>
+        </div>
+        <div class="profil-group">
+          <label for="nowusername">Felhasználónév:</label>
+          <input type="text" id="nowusername" name="nowusername" disabled>
+        </div>
+        <div class="profil-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" disabled>
+        </div>
+        <div class="profil-group">
+          <label for="password">Jelszó módosítása:</label>
+          <input type="password" minlength="6" id="updatepassword" name="password" required>
+        </div>
+        <div class="profilbutton-group">
+          <button type="button" onclick="closeProfil()" id="profilcancelButton">Mégse</button>
+          <button type="submit" id="profilokButton">Kész</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <form id="modalForm">
+        <div class="form-group">
+          <label for="title">Cím:</label>
+          <input type="text" id="edittitle" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="post">Tartalom:</label><br>
+          <textarea type="text" id="editpost" name="post" required></textarea>
+        </div>
+        <div class="button-group">
+          <button type="button" onclick="closeModal()" id="cancelButton">Mégse</button>
+          <button type="submit" id="okButton">Módosítás</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <header class="nav">
+    <div class="logo">
+      <img class="logoimg" src="/logo" alt="">
+      <a id="navCim" href="/home" target="" rel="noopener noreferrer" class="">BYTEBAG</a>
+    </div>
+    <div class="search">
+      <form action="/search" method="get">
+        <input type="search" name="q" placeholder="Keresés..." class="searchiput" maxlength="40">
+        <button class="searchBTN"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+    <div class="navBTN">
+      <a href="/home"><button id="" class="mneuNAVBTN">Fórum</button></a>
+      <button id="gotomarket" class="mneuNAVBTN">Piactér</i></button>
+      <button onclick="chat()"><i class="fa-regular fa-comment-dots"></i></button>
+      <button onclick="seeprofil()"><i class="fa-regular fa-user"></i></button>
+      <button onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    </div>
+  </header>
+
+  <hr>
+  <h3 class="title">Posztoló: <%= post.username %>
+  </h3>
+  <div data-posztid="<%= post.posztID %>" data-posztuserid="<%= post.userID %>" id="modifyBTN" class="modifyBTN"></div>
+  <main class="container">
+    <hr>
+
+
+    <h2 class="cimtitle" id="title">
+      <%= post.title.trim() %>
+    </h2>
+    <div class="tagolas">
+      <div data-id="<%= post.userID %>" class="poszt" id="poszt">
+        <p id="post" class="post">
+          <%= post.post %>
+        </p>
+      </div>
+      <div>
+        <h3>Kommentek</h3>
+        <div class="commentsection" id="commentsection">
+          <form id="postFel" onsubmit="postcomment(event)">
+            <textarea id="newcomment" maxlength="500" class="newcomment" required
+              placeholder="Mire gondolt a költő?"></textarea>
+            <button type="submit" class="commentbtn">
+              Küldés</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="/post.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ByteBag - Chat</title>
+  <script src="https://kit.fontawesome.com/543ba7d761.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="/logo" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="navhatter">
+    <header class="nav">
+      <div class="logo">
+        <img class="logoimg" src="/logo" alt="">
+        <a id="navCim" href="/home" target="" rel="noopener noreferrer" class="">BYTEBAG</a>
+      </div>
+
+      <div class="selectmod">
+        <div class="checkbox-wrapper-2">
+          <label for="kesesmod" style="color: white;">Vétel</label>
+          <input type="checkbox" name="kesesmod" class="sc-gJwTLC ikxBAC" id="chatoption">
+          <label for="kesesmod" style="color: white;">Eladás</label>
+        </div>
+      </div>
+
+      <div class="navBTN">
+        <a href="/home"><button id="" class="mneuNAVBTN">Fórum</button></a>
+        <a href="/market"><button id="" class="mneuNAVBTN">Piactér</button></a>
+        <button onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+      </div>
+    </header>
+  </div>
+
+  <main class="">
+    <div class="elrendezes">
+      <section class="chatgombok">
+        <div>
+          <div id="chatikonok">
+            <div class="chatbutton">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chattextbox mt-2">
+        <div class="chat-container">
+          <div class="message-box">
+            <div class="chatTitle">
+              <h4 id="userName"></h4>
+              <h6 id="chatTitle"></h6>
+            </div>
+            <div id="scrollDown">
+              <i onclick="scrollDown()" class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="messages" id="messages"></div>
+            <hr class="line">
+            <form id="messageForm">
+              <textarea id="messageInput" class="messageInput" rows="1" placeholder="Üzenet írása..."></textarea>
+              <button class="sendBTN" type="button" onclick="sendMessage()"><i class="fa-regular fa-paper-plane"
+                  style="color: #005eff;"></i></button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="/chat.js"></script>
+  <link rel="stylesheet" href="/chat.css">
+</body>
+
+</html>

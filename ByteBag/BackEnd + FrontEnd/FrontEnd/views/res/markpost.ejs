@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>ByteBag - <%= post.title %>
+  </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/marketpost.css">
+  <script src="https://kit.fontawesome.com/543ba7d761.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="/logo" type="image/x-icon">
+</head>
+
+<body>
+  <div id="profilModal" class="profil">
+    <div class="profil-content">
+      <h2 id="profilid">Profil</h2>
+      <form id="profilForm">
+        <div class="profil-group">
+          <br>
+          <label for="username">Profilkép:</label>
+          <input type="text" name="username" disabled>
+        </div>
+        <div class="profil-group">
+          <label for="nowusername">Felhasználónév:</label>
+          <input type="text" id="nowusername" name="nowusername" disabled>
+        </div>
+        <div class="profil-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" disabled>
+        </div>
+        <div class="profil-group">
+          <label for="password">Jelszó módosítása:</label>
+          <input type="password" minlength="6" id="updatepassword" name="password" required>
+        </div>
+        <div class="profilbutton-group">
+          <button type="button" onclick="closeProfil()" id="profilcancelButton">Mégse</button>
+          <button type="submit" id="profilokButton">Kész</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <form id="modalForm">
+        <div class="form-group">
+          <label for="title">Cím:</label>
+          <input type="text" id="edittitle" name="title" value="<%= post.title %>" required>
+        </div>
+        <div class="form-group">
+          <label for="post">Ár:</label><br>
+          <input type="text" id="editprice" name="post" value="<%= post.price %>" required>
+        </div>
+        <div class=" form-group">
+          <label for="post">Tartalom:</label><br>
+          <textarea type="text" id="editpost" name="post" required><%= post.marketpost %></textarea>
+        </div>
+        <div class="button-group">
+          <button type="button" onclick="closeModal()" id="cancelButton">Mégese</button>
+          <button type="submit" id="okButton">Módosítás</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <header class="nav">
+    <div class="logo">
+      <img class="logoimg" src="/logo" alt="">
+      <a id="navCim" href="/home" target="" rel="noopener noreferrer" class="">BYTEBAG</a>
+    </div>
+    <div class="search">
+      <form action="/searchmar" method="get" class="form-control-sm">
+        <input type="search" name="m" id="m" placeholder="Keresés..." class="searchiput" maxlength="40">
+        <button class="searchBTN"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+    <div class="navBTN">
+      <a href="/home"><button id="" class="mneuNAVBTN">Fórum</button></a>
+      <button id="gotomarket" class="mneuNAVBTN">Piactér</button>
+      <button onclick="chat()"><i class="fa-regular fa-comment-dots"></i></button>
+      <button onclick="seeprofil()"><i class="fa-regular fa-user"></i></button>
+      <button onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    </div>
+  </header>
+  <center>
+    <hr>
+  </center>
+  <h3 class="title">Hirdető: <%= post.username %>
+  </h3>
+  <div data-posztid="<%= post.marketID %>" data-posztuserid="<%= post.userID %>" id="modifyBTN" class="modifyBTN"></div>
+  <center>
+    <hr>
+  </center>
+  <main class="container">
+    <h2 class="cimtitle" id="title">
+      <%= post.title %> - <%= post.price %>Ft
+    </h2>
+    <div class="tagolas">
+      <div data-id="<%= post.userID %>" class="poszt" id="poszt">
+        <div class="galbox">
+          <div id="galeria" class="galeria">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" id="carousel-inner">
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <p id="post" class="post">
+          <%= post.marketpost%>
+        </p>
+      </div>
+      <div class="chat">
+        <h3 style="text-align: center;">Privát üzenet</h3>
+        <button data-chatid="<%= thisChat%>" class="btn" id="sendchat" class="privGomb">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <i class="fa-regular fa-comment-dots"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="/marketpost.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Elfelejtett jelszó</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="/login.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="/logo" type="image/x-icon">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form id="sendtoemail" class="login-form" action="/sendresetcode" method="post">
+                <h2>Elfelejtett jelszó</h2>
+                <input id="loginusername" id="email" name="email" type="email" placeholder="E-mail" required />
+                <button class="btn" id="login" type="submit">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Küldés
+                </button>
+                <p class="message">Eszedbe jutott? <a href="/">Vissza</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

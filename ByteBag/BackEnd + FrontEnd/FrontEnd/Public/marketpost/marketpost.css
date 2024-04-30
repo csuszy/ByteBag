@@ -1,0 +1,887 @@
+* {
+    transition: .1s ease-in-out;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html {
+    min-height: 100dvh;
+    font-family: 'Montserrat';
+}
+
+.galbox {
+    position: relative;
+    max-height: fit-content;
+    margin: 0;
+    top: -12rem;
+}
+
+.galeria {
+    display: flex;
+    max-height: fit-content;
+    margin: 0;
+}
+
+.carousel {
+    position: flex;
+    width: 100%;
+    max-height: fit-content;
+    margin: 0;
+}
+
+.carousel-inner {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+}
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item img {
+    height: 100%;
+    max-height: 500px;
+    max-width: 100%;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#3A0061, #000823);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding-bottom: 40px;
+}
+
+.nav {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    width: 100%;
+    color: aliceblue;
+    min-height: 60px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.logo {
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 5px;
+    top: -3px;
+    align-items: center;
+}
+
+.logoimg {
+    max-height: 90px;
+}
+
+.search {
+    position: absolute;
+    left: auto;
+    right: auto;
+}
+
+.search>form {
+    display: flex;
+}
+
+.searchiput {
+    max-width: 220px;
+    height: 30px;
+    width: 100%;
+    border-radius: 50px 0px 0px 50px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 8px;
+}
+
+.searchBTN {
+    background-color: white;
+    border: none;
+    margin: 0px;
+    height: 30px;
+    width: 35px;
+    border-radius: 0 50px 50px 0;
+    text-align: center;
+}
+
+.searchBTN:hover {
+    box-shadow: 1px 1px 3px rgb(43, 43, 43);
+}
+
+.searchBTN:active {
+    box-shadow: inset 1px 1px 3px rgb(43, 43, 43);
+}
+
+.navBTN {
+    text-decoration: nones;
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 50px;
+    gap: 0px;
+    top: 20px;
+    align-items: center;
+}
+
+.navBTN button {
+    color: white;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+}
+
+.navBTN .mneuNAVBTN {
+    gap: 0px;
+    width: 100px;
+    right: 100px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+}
+
+.navBTN button:hover {
+    text-shadow: 0px 0px 30px white;
+    transform: scale(1.04);
+}
+
+.navBTN button:active {
+    text-shadow: 0px 0px 30px white;
+    transform: scale(1.04);
+}
+
+#navCim {
+    color: white;
+}
+
+@media only screen and (max-width: 960px) {
+    .navBTN {
+        right: 10px;
+    }
+
+    .search {
+        position: absolute;
+        left: auto;
+        right: auto;
+    }
+
+    .logoimg {
+        max-height: 90px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .nav {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(2, 50px);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        gap: 10px;
+        place-items: center;
+    }
+
+    .logo {
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        grid-column: 1;
+    }
+
+    .search {
+        margin-top: 15px;
+        display: flex;
+        position: relative;
+        grid-column: 2;
+    }
+
+    .searchBTN {
+        display: block;
+        position: relative;
+    }
+
+    .navBTN {
+        display: flex;
+        position: relative;
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        margin-bottom: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 490px) {
+    .nav {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 50px);
+        padding-bottom: 10px;
+        gap: 10px;
+        place-items: center;
+    }
+
+    .logo {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 2px;
+        margin-left: -15px;
+    }
+
+    .search {
+        margin-top: 15px;
+        display: flex;
+        position: relative;
+        width: 100%;
+        grid-column: 1;
+        grid-row: 2;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .searchBTN {
+        display: block;
+        position: relative;
+    }
+
+    .navBTN {
+        width: 100%;
+        display: flex;
+        position: relative;
+        padding: 0;
+        gap: 0;
+        grid-column: 1;
+        grid-row: 3;
+
+        align-content: center;
+        justify-content: center;
+    }
+
+    .mneuNAVBTN {
+        max-width: 80px;
+    }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1800px;
+}
+
+.title {
+    text-align: center;
+}
+
+.cimtitle {
+    text-align: center;
+    margin-top: 60px;
+    white-space: pre-wrap;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.main-title {
+    position: static;
+}
+
+.main-title>button {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+
+    z-index: 999;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    text-shadow: 0px 0px 10px black;
+    background: linear-gradient(-20deg, #c300ff, #d161f3);
+}
+
+.main-title>button:hover {
+    box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.3);
+}
+
+.main-title>button:active {
+    box-shadow: inset 1px 1px 10px rgb(255, 255, 255, 0.5);
+}
+
+hr {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+.mainlink {
+    text-decoration: underline;
+    color: white;
+}
+
+
+
+.poszt {
+    width: 100%;
+    white-space: pre-wrap;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.modifyBTN {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.modifyBTN button {
+    color: white;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+}
+
+.modifyBTN button:nth-child(1) {
+    background-color: transparent;
+}
+
+.modifyBTN button:nth-child(2) {
+    background-color: transparent
+}
+
+.modifyBTN button:nth-child(1):hover {
+    text-shadow: 0px 0px 30px red;
+    transform: scale(1.04);
+}
+
+.modifyBTN button:nth-child(1):active {
+    text-shadow: 0px 0px 30px red;
+}
+
+.modifyBTN button:nth-child(2):hover {
+    text-shadow: 0px 0px 30px aqua;
+    transform: scale(1.04);
+}
+
+.modifyBTN button:nth-child(2):active {
+    text-shadow: 0px 0px 30px aqua;
+}
+
+
+
+
+/*mymodal*/
+/* A modal alapstílusa */
+.modal {
+    color: black;
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 29;
+}
+
+/* A modal tartalmának stílusa */
+.modal-content {
+    font-family: 'Montserrat';
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    min-width: 250px;
+    max-width: 600px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 0px 0px 10px 0px white;
+    box-shadow: 0px 0px 10px 0px white;
+    background: linear-gradient(#3A0061, #000823);
+    box-sizing: border-box;
+    border-radius: 15px;
+    z-index: 30;
+}
+
+/* Form csoportok */
+.form-group {
+    margin-bottom: 15px;
+    color: white;
+    margin: 5px;
+}
+
+/* Címkék */
+.form-group label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Input mezők */
+.form-group input {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.form-group input:disabled {
+    color: grey;
+}
+
+/* Gombok */
+.button-group {
+    font-family: 'Montserrat';
+    padding-bottom: 20px;
+    padding-top: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#editpost {
+    resize: vertical;
+    width: 100%;
+    max-height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    min-height: 100px;
+    color: #FFF;
+    background-color: #3A0061;
+}
+
+#okButton {
+    font-weight: bold;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-left: 5px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: #04AA6D;
+    border: 2px solid #04AA6D;
+    padding: 10px 50px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+#okButton:hover {
+    color: white;
+    background-color: #04AA6D;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+.button-group button {
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.button-group button:hover {
+    color: white;
+    background-color: #04AA6D;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+#cancelButton {
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Montserrat';
+    border-radius: 15px;
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding: 10px 50px;
+}
+
+#cancelButton:hover {
+    background-color: red;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+.post {
+    display: block;
+    white-space: pre-wrap;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    position: relative;
+    top: -22rem;
+}
+
+
+
+
+/*profilmodal*/
+/* A modal alapstílusa */
+.profil {
+    font-family: 'Montserrat';
+    color: black;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* A modal tartalmának stílusa */
+.profil-content {
+    font-family: 'Montserrat';
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    min-width: 250px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 0px 0px 10px 0px white;
+    box-shadow: 0px 0px 10px 0px white;
+    width: 30%;
+    background: linear-gradient(#3A0061, #000823);
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.profil-content h2 {
+    font-family: 'Montserrat';
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+/* Form csoportok */
+.profil-group {
+    margin-bottom: 15px;
+    color: white;
+    margin: 5px;
+}
+
+/* Címkék */
+.profil-group label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Input mezők */
+.profil-group input {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 25px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.profil-group input:disabled {
+    color: grey;
+}
+
+
+
+/* Gombok */
+.profilbutton-group {
+    padding-bottom: 20px;
+    padding-top: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.button-group button {
+    margin-left: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.profilbutton-group button {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-left: 4px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: #04AA6D;
+    border: 2px solid #04AA6D;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.profilbutton-group button:hover {
+    color: white;
+    background-color: #04AA6D;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+#profilcancelButton {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    border-radius: 15px;
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#profilcancelButton:hover {
+    background-color: red;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    transform: scale(1.04);
+}
+
+.tagolas {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 1150px) {
+    .tagolas {
+        grid-template-columns: 100%;
+        place-items: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {}
+
+.messageinput {
+    position: relative;
+    /* Módosítva */
+    width: 100%;
+    /* Új */
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+
+
+.chat {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #289bb8;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn:hover {
+    background: #289bb8;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #289bb8,
+        0 0 25px #289bb8,
+        0 0 50px #289bb8,
+        0 0 100px #289bb8;
+}
+
+.btn span {
+    position: absolute;
+    display: block;
+}
+
+.btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #289bb8);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #289bb8);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #289bb8);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #289bb8);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
