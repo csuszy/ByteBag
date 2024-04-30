@@ -11,6 +11,7 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 - [Dokumentáció](#dokumentáció)
 - [Branch-ek](#branch)
 - [Fejlesztők](#fejlesztők)
+- [Külső library-k](#külsőlibrary-k)
   
 
 ## Funkciók
@@ -38,3 +39,7 @@ Admin jogosultség esetén a WPF alkamazás is igénybe vehető amit az oldalon 
 - [Császi Bence](https://github.com/csuszy)
 - [Hulvej Szabolcs](https://github.com/szabixd)
 - [Bencze Andrés Krisztián](https://github.com/Jegenye0)
+
+
+## Külső library-k
+[Network Helper](https://github.com/vellt/Network_Helper_Library)
