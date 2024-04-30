@@ -30,9 +30,9 @@ Admin jogosultség esetén a WPF alkamazás is igénybe vehető amit az oldalon 
 [Dokumentáció](./ByteBagDokumentacio.docx)
 
 ## Branch
-  - [WPF alkalmazás branch-e](https://github.com/csuszy/ByteBagMAIN/tree/wpf)
+  - [WPF alkalmazás branch-e](https://github.com/csuszy/ByteBag/tree/Wpf)
     
-  - [WEB alkalmazás branch-e](https://github.com/csuszy/ByteBagMAIN/tree/web)
+  - [WEB alkalmazás branch-e](https://github.com/csuszy/ByteBag/tree/Web)
 
 ## Fejlesztők
 - [Császi Bence](https://github.com/csuszy)
