@@ -22,11 +22,13 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 
 ## Funkciók
 - Forum
+- Koment lehetőség
 - Marketplace
 - Chat a marketplace-hez
 - WPF admin alkalmazás
 - verzió kezelés
 - Login with github funció
+- Elfelejtett jelszó vissza állítása emailües kóddal
 
 
 
