@@ -10,10 +10,11 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 ## Tartalomjegyzék
 - [Funkciók](#funkciók)
 - [Használat](#használat)
+- [Tesz fiókok](#Tesz)
 - [Dokumentáció](#dokumentáció)
 - [Branch-ek](#branch)
 - [Fejlesztők](#fejlesztők)
-- [Külső library-k](#külsőlibrary-k)
+- [Külső library-k](#Külső)
 
 
   
@@ -33,9 +34,9 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 Látogass el a https://bytebag.hu weboldalra és már használható is.
 Admin jogosultség esetén a WPF alkamazás is igénybe vehető amit az oldalon keresztül könnyen le lehet tölteni.
 
-Teszt céljábol használható fiókok:
-  - [Felhaszunálónév]: teszt, Jelszó: teszt123 (Sima felhaszunáló)
-  - [Felhaszunálónév]: admin, Jelszó: admin123 (Admin felhaszunáló)
+## Teszt fiókok:
+  - Felhaszunálónév: teszt, Jelszó: teszt123 (Sima felhaszunáló)
+  - Felhaszunálónév: admin, Jelszó: admin123 (Admin felhaszunáló)
 
 
 
