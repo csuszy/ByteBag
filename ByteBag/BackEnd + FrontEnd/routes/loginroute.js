@@ -233,7 +233,7 @@ route.post('/register', (req, res) => {
                 pool.query(query, [regusername, regemail, hashpassword], (err, results) => {
                     //console.log(regusername, regemail, hashpassword);
                     if (err) {
-                        //console.error(err);
+                        console.error(err);
                         res.status(500).send({ message: "Szerver hiba!" });
                         return;
                     }
