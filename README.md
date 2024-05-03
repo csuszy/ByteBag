@@ -10,11 +10,11 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 ## Tartalomjegyzék
 - [Funkciók](#funkciók)
 - [Használat](#használat)
-- [Tesz fiókok](#Tesz)
+- [Tesz fiókok](#teszt-fiókok)
 - [Dokumentáció](#dokumentáció)
 - [Branch-ek](#branch)
 - [Fejlesztők](#fejlesztők)
-- [Külső library-k](#Külső)
+- [Külső library-k](#külső-library-k)
 
 
   
