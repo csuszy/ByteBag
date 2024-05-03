@@ -38,6 +38,15 @@ Admin jogosultség esetén a WPF alkamazás is igénybe vehető amit az oldalon 
   - Felhaszunálónév: teszt, Jelszó: teszt123 (Sima felhaszunáló)
   - Felhaszunálónév: admin, Jelszó: admin123 (Admin felhaszunáló)
 
+## Kompromisszumok
+A weboldal a localhost-os futtatás miatt sajnos egy két funkció hiányosan vagy nem működik. Ezeka következők:
+- Login with Gitub
+- E-mail értesítő
+- Elfelejtett jelszó
+- ssl tanusítvény
+
+  Ezek hiányosságok mint adatvédelmi szempontok miatt van. Nem szeretnénk privát kulcsokat és belépési adatokat publikálni. Viszont a [weboldalon](https://bytebag.hu) ezek a funkciók gond nélkül üzemelnek és ki is próbálhatók.
+
 
 
 ## Dokumentáció
