@@ -26,6 +26,9 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 Látogass el a https://bytebag.hu weboldalra és már használható is.
 Admin jogosultség esetén a WPF alkamazás is igénybe vehető amit az oldalon keresztül könnyen le lehet tölteni.
 
+- Felhaszunálónév: teszt, Jelszó: teszt123 (Sima felhaszunáló)
+- Felhaszunálónév: admin, Jelszó: admin123 (Admin felhaszunáló)
+
 ## Dokumentáció
 [Dokumentáció](./ByteBagDokumentacio.docx)
 
