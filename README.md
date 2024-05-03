@@ -11,6 +11,7 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 - [Funkciók](#funkciók)
 - [Használat](#használat)
 - [Tesz fiókok](#teszt-fiókok)
+- [Kompromisszumok](#kompromisszumok)
 - [Dokumentáció](#dokumentáció)
 - [Branch-ek](#branch)
 - [Fejlesztők](#fejlesztők)
