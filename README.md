@@ -1,10 +1,8 @@
 # ByteBag
 
 A ByteBag egy web alkalmazás ami egy tech témával foglalkozó 
-forum és használt tech eszközöket árusító marketplace ahol
-a felhasználók eladhatják az ilyen eszközöket. 
-Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használahtjuk.
-
+fórum és használt tech eszközöket árusító marketplace.
+Kiegészítésként [Hulvej Szabolcs](https://github.com/szabixd) által fejlesztett Adminsztrációs Asztali alkalmazásban kezelhetjük a felhasználók fiókjait és posztjait.
 
 
 ## Tartalomjegyzék
@@ -17,7 +15,6 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 - [Fejlesztők](#fejlesztők)
 - [Külső library-k](#külső-library-k)
 
-
   
 
 ## Funkciók
@@ -28,25 +25,24 @@ Emellé még tartoyik egy WPF alkalmazás amiben az admin funkciókat használah
 - WPF admin alkalmazás
 - verzió kezelés
 - Login with github funció
-- Elfelejtett jelszó vissza állítása emailües kóddal
-
+- Elfelejtett jelszó vissza állítása E-mail kóddal
 
 
   
 ## Használat
-Látogass el a https://bytebag.hu weboldalra és már használható is.
+Futtasd a szervert localhost-on!
 Admin jogosultség esetén a WPF alkamazás is igénybe vehető amit az oldalon keresztül könnyen le lehet tölteni.
 
 ## Teszt fiókok:
-  - Felhaszunálónév: teszt, Jelszó: teszt123 (Sima felhaszunáló)
-  - Felhaszunálónév: admin, Jelszó: admin123 (Admin felhaszunáló)
+  - Felhaszunálónév: teszt, Jelszó: teszt123 (Sima felhasználó)
+  - Felhaszunálónév: admin, Jelszó: admin123 (Admin felhasználó)
 
 ## Kompromisszumok
-A weboldal a localhost-os futtatás miatt sajnos egy két funkció hiányosan vagy nem működik. Ezeka következők:
+A weboldal a localhost-os futtatás miatt sajnos egy két funkció hiányosan vagy nem működik. Ezek a következők:
 - Login with Gitub
 - E-mail értesítő
 - Elfelejtett jelszó
-- ssl tanusítvény
+- SSL tanusítvány
 
   Ezek hiányosságok mint adatvédelmi szempontok miatt van. Nem szeretnénk privát kulcsokat és belépési adatokat publikálni. Viszont a [weboldalon](https://bytebag.hu) ezek a funkciók gond nélkül üzemelnek és ki is próbálhatók.
 
