@@ -3,6 +3,7 @@
 A ByteBag egy web alkalmazás ami egy tech témával foglalkozó 
 fórum és használt tech eszközöket árusító marketplace.
 Kiegészítésként [Hulvej Szabolcs](https://github.com/szabixd) által fejlesztett Adminsztrációs Asztali alkalmazásban kezelhetjük a felhasználók fiókjait és posztjait.
+---> Képek a dokumentációban!
 
 
 ## Tartalomjegyzék
